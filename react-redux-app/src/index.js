@@ -4,12 +4,10 @@ import App from "./App";
 import { applyMiddleware, createStore } from "redux";
 import { Provider } from "react-redux";
 import thunk from "redux-thunk";
+import { reducer } from './reducers';
 
 import './index.css';
 
-const reducer = () => {
-    return 'hello'
-}
 
 const store = createStore(reducer, applyMiddleware(thunk));
 
