@@ -30,7 +30,7 @@ const Recipe = ({ fetchRandomRecipe, recipeName, recipeImg, recipeUrl, recipeYou
         <>
             <h1>{recipeName}</h1>
             <img src={recipeImg} alt={recipeName} />
-            <h4><a href={thing}>Recipe</a></h4>
+            <h4><a href={thing}>view recipe</a></h4>
             <button onClick={fetchRecipe}>new recipe</button>
             <h3 className="errorMsg">{error}</h3>
         </>
