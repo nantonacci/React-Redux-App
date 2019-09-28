@@ -1,0 +1,47 @@
+* {
+  color: #161616;
+  font-family: 'Mansalva', cursive;
+  margin: 0;
+}
+
+.App {
+  text-align: center;
+}
+
+.title {
+  font-size: 3rem;
+}
+
+img {
+  border-radius: 30px;
+  max-width: 400px;
+}
+
+p {
+  font-size: 2rem;
+}
+
+a {
+  color: #1f4c38;
+  font-size: 2rem;
+}
+
+a:hover {
+  color: #e96e27;
+}
+
+button {
+  width: 200px;
+  font-size: 2rem;
+  color: #161616;
+  border: 3px solid #1f4c38;
+  border-radius: 10px;
+  background-color: #e96e27;
+  font-family: 'Mansalva', cursive;
+  margin: 10px 10px 30px;
+}
+
+button:hover {
+  color: #e96e27;
+  background-color: #161616;
+}
