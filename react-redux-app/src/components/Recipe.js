@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 
 import { fetchRandomRecipe } from '../actions';
 
-const Recipe = ({ fetchRandomRecipe, recipeName, isFetching, error }) => {
+const Recipe = ({ fetchRandomRecipe, recipeName, recipeImg, recipeUrl, recipeYouTube, isFetching, error }) => {
     useEffect(()=> {
         fetchRandomRecipe();
     }, [fetchRandomRecipe]);
@@ -15,11 +15,22 @@ const Recipe = ({ fetchRandomRecipe, recipeName, isFetching, error }) => {
 
     if (isFetching) {
         return <p><span role="img" aria-label="sparkles">✨</span>loading new recipe<span role="img" aria-label="sparkles">✨</span></p>;
-    }
+    };
+    
+    let thing = recipeUrl;
+    if (recipeUrl === ""){
+        thing = recipeYouTube;
+        console.log('no url')
+
+    } else {
+        console.log('yes url')
+    };
 
     return (
         <>
             <h1>{recipeName}</h1>
+            <img src={recipeImg} alt={recipeName} />
+            <h4><a href={thing}>Recipe</a></h4>
             <button onClick={fetchRecipe}>new recipe</button>
             <h3 className="errorMsg">{error}</h3>
         </>
@@ -30,6 +41,9 @@ const mapStateToProps = state => {
     return {
         isFetching: state.isFetching,
         recipeName: state.recipeName,
+        recipeImg: state.recipeImg,
+        recipeUrl: state.recipeUrl,
+        recipeYouTube: state.recipeYouTube,
         error: state.error
     }
 }

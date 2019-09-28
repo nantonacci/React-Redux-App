@@ -2,8 +2,9 @@ import { FETCH_RECIPE_START, FETCH_RECIPE_SUCCESS, FETCH_RECIPE_FAILURE } from '
 
 const initialState = {
     recipeName: '',
-    recipeIng: '',
+    recipeImg: '',
     recipeUrl: '',
+    recipeYouTube: '',
     error: '',
     isFetching: false
 };
@@ -18,20 +19,18 @@ export const reducer = (state = initialState, action) => {
             };
         case FETCH_RECIPE_SUCCESS:
             console.log('success');
+            
             return {
                 ...state,
                 recipeName: action.payload.strMeal,
-                recipeIng: action.payload.strIngredient,
-
-                let ingredients = "";
-                action.payload.forEach(thing => {
-                    if (thing)
-                })
-
+                recipeImg: action.payload.strMealThumb,
                 recipeUrl: action.payload.strSource,
+                recipeYouTube: action.payload.strYoutube,
                 error: '',
-                isFetching: false
+                isFetching: false,
+                
             }
+            
         case FETCH_RECIPE_FAILURE:
             console.log('fail');
             return {
